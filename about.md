@@ -1,18 +1,13 @@
 ---
-title: Colophon
+title: Who am i ? 
 permalink: /about/
 layout: page
-excerpt: Hello peeps, I'm student of computer science from Banyuwangi, living in Jogjakarta. This blog for documentation about my programming journey, running on jekyll, hosting on netlify and using my own simple theme.
+excerpt: i hate my life so i do rev.
 comments: false
 ---
-
-He's a student from Banyuwangi, living in Jogjakarta. the blog for documentation about his programming 🎒 journey, running on jekyll, hosting on [now.sh](http://now.sh) and using his own theme, he name it <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noopener">klisé</a>, he also loves to learning web technology; but he often forgot, that a reason why him doing the writing.
-
-If you have a question about him or else, just send a letter to him.
-
-You can [report](http://github.com/piharpi/jekyll-klise/issues/new) if there is an broken link(s) or somethings else.
-
+Hello! my name is Badreddine Chamkhi, I am a computer science student in ESPRIT Enigneering , Tunisia. I am passionate about cyber security so i pass most of my free time playing CTFs (Capture the flag) with my friends. I mainly do reverse engineering and Binary exploitation. I am conducting this blog to share my writeups of challenges i solved during and after CTFs, also i am going to publish certain studies i do about exploit developpement and other wild discoveries.
 **may u needs ✨**
 
 - {{ site.author.email }}
 - github.com/{{ site.author.github }}
+- twitter.com/{{ site.author.twitter }}
