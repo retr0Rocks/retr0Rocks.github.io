@@ -1,5 +1,5 @@
 ---
-title: PWN ROOT-ME , Safe Linking Bypass. 👶
+title: PWN ROOT-ME , Safe Linking Bypass.
 tags: [pwn, safe-linking, heap-exploitation, tcache]
 ---
 # Summary
