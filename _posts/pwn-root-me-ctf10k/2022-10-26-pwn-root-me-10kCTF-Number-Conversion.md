@@ -98,6 +98,7 @@ dynamic analysis will give us the right answer.
 
 # Dynamic Analysis
 firing up the binary in gdb and trying to inpect where the given ``username`` and ``password`` is stored in.
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/9NTVULg"  ><a href="//imgur.com/a/9NTVULg">1</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 ![1.png](https://imgur.com/a/XuF44zU)
 Bingo , we have something in the mind now,  we can access memory before ``formatters`` address, also by this inspection we conclude that we also have control about what comes before ``formatters``.
 how this work ?
