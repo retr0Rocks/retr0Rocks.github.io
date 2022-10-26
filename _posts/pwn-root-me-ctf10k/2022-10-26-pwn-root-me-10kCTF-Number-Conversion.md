@@ -102,7 +102,9 @@ firing up the binary in gdb and trying to inpect where the given ``username`` an
 Bingo , we have something in the mind now,  we can access memory before ``formatters`` address, also by this inspection we conclude that we also have control about what comes before ``formatters``.
 how this work ?
 let's try giving normal inputs to the binary and check this area again.
+
 ![2.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/2.PNG?raw=true)
+
 ![3.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/3.PNG?raw=true)
 
 looks nice ``password+16`` and ``password + 24`` are free so we can use it freely.
@@ -114,6 +116,7 @@ I tried in **Static and Dynamic analysis** to give the first nudge to understand
 by passing the ``%s`` format specifier to  ``scanf`` we can trigger a buffer overflow.
 
 ###### Little visualization how the layout should be when exploiting
+
 ![3_1.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/3_1.PNG?raw=true)
 
 #### Practical
@@ -139,9 +142,13 @@ p.sendline(password)
 p.interactive()
 ```
 ( I switched to my VM for easier debugging.)
+
 ![4.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/4.PNG?raw=true)
+
 Now , we successfully prepared the layout for the exploitation. 
+
 ![5.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/5.PNG?raw=true)
+
 giving ``-1`` as the choice in the menu, we now accessed the format specifier in the ``formatters[-2]`` which is the pointer ``0x4040d8`` that points on ``%s``. Giving a large input nothing happens, since we are in a while loop we need just to break out of it.
 ```c++
         do
@@ -149,7 +156,9 @@ giving ``-1`` as the choice in the menu, we now accessed the format specifier in
         while ( v5 != '\n' && v5 != (char)'\xFF' );
 ```
 as the code do , we just give it a new line so it breaks.
+
 ![6.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/6.PNG?raw=true)
+
 now the broke broke , we have a sigsev. clear ret2libc attack.
 I am going to go brief on the last exploitation phase since it's a classic attack.
 ```python
@@ -169,7 +178,9 @@ print(hex(libc_leak))
 i grabbed ``pop rdi;ret`` gadget from ``ropper`` (ROPgadget works as well).
 the offset to overwrite instruction pointer can be obtained using ``gdb``
 i used the got entry of puts to leak a libc address.
+
 ![7.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/7.PNG?raw=true)
+
 libc leak successfull.
 
 ```python
@@ -186,7 +197,8 @@ p.sendline(payload)
 calculating ``system`` and ``/bin/sh`` addresses. then sending it.
 NB: i jumped to ``system + 4`` since whren trying to jump in ``system`` the program broke so i had to increment a little bit so i jump inside the function.
 
-![8.png](8.PNG)
+![8.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/8.PNG?raw=true)
+
 and voila, solved.
 # Final Exploit
 ```python
