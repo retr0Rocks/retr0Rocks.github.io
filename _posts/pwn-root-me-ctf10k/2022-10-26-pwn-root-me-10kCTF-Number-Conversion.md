@@ -98,7 +98,7 @@ dynamic analysis will give us the right answer.
 
 # Dynamic Analysis
 firing up the binary in gdb and trying to inpect where the given ``username`` and ``password`` is stored in.
-![1.png](https://imgur.com/a/XuF44zU)
+![1.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/1.PNG?raw=true)
 Bingo , we have something in the mind now,  we can access memory before ``formatters`` address, also by this inspection we conclude that we also have control about what comes before ``formatters``.
 how this work ?
 let's try giving normal inputs to the binary and check this area again.
