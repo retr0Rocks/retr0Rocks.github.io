@@ -4,7 +4,7 @@ description: >- # site description
   i hate my life so i do pwn.
 lang: en-US # default lang
 timezone: Africa/Tunis # set your timezone
-image: assets/img/retr0.png # This image used for Open Graph more info https://ogp.me/
+image: "https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/assets/img/ogp.png" # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/retr0rocks/retr0rocks.github.io # site repo [optional]
 mode: dark # default theme "dark" | "light"
 
