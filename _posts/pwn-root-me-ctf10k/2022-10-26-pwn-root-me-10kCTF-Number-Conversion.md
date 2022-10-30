@@ -159,7 +159,7 @@ as the code do , we just give it a new line so it breaks.
 
 ![6.png](https://github.com/retr0Rocks/retr0rocks.github.io/blob/master/_posts/pwn-root-me-ctf10k/6.PNG?raw=true)
 
-now the broke broke , we have a sigsev. clear ret2libc attack.
+now the program broke , we have a sigsev. clear ret2libc attack.
 I am going to go brief on the last exploitation phase since it's a classic attack.
 ```python
 payload = b"A" * 24
