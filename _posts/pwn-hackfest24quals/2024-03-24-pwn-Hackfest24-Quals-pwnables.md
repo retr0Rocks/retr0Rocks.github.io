@@ -154,8 +154,11 @@ p.interactive()
 
 1 -> we set the flags on the file structures si it's PUTTING (```c++ 
 (f->_flags & _IO_CURRENTLY_PUTTING)```)
+
 2.1 -> we set ``_IO_write_base`` to the address ``file_contents``
+
 2.2 -> we set ``_IO_write_ptr`` to ``file_contents + bytes_to_put``.
+
 
 ``hackfest{503af008833e09bb65d50815a064a9719ddb13b6a3f918ad436548685ac22f8b}``
 
@@ -163,7 +166,7 @@ p.interactive()
 
 This challenge is a reincarnation of the housk of husk but in the newer libcs (glibc 2.36).
 
-TL;DR
+##### TL;DR
 	Large Bin Attack (instead of unsorted bin)
 	Forge new  __printf_function_table and __printf_arginfo_table
 	call register_printf_specifier
@@ -333,9 +336,9 @@ if __name__=="__main__":
 
 No show functions, abuse stdout file struct.
 
-##### TL;DR
-	Simple UAF + double free
-    craft an unsorted bin chunk, change the least 2 bytes (might have a nibble bruteforce in certain envs) to get stdout file structure, null lsb of write_base you get a leak, from there nomal hooks hijacking.
+#### TL;DR
+        Simple UAF + double free
+        craft an unsorted bin chunk, change the least 2 bytes (might have a nibble bruteforce in certain envs) to get stdout file structure, null lsb of write_base you get a leak, from there nomal hooks hijacking.
 
 
 
@@ -523,6 +526,7 @@ if __name__ == "__main__":
     p.interactive()
 
 ```
+
 
 ``hackfest{d023ebd7eb540bbae10fef187c8c68898b2b56ffea56372bb13ab027cc8c945f}``
 
