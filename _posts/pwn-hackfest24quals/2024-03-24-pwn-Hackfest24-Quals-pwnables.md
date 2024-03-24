@@ -10,7 +10,7 @@ tags:
   - house_of_husk
   - libc-236
 ---
-Those are some brief writeups for the pwnables.
+Those are some brief writeups for the pwnables i authored.
 
 
 # STATIC
