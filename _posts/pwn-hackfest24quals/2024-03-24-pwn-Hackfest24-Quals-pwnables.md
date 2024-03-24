@@ -47,6 +47,7 @@ void main() {
 
 1 -> Buffer Overflow occures here.
 
+
 ```python
 from pwn import *
 import time
@@ -133,6 +134,8 @@ void main() {
 ```
 
 
+
+
 ```python
 from pwn import *
 p = process("./main")
@@ -152,10 +155,13 @@ p.sendline(payload)
 p.interactive()
 ```
 
+
 1 -> we set the flags on the file structures si it's PUTTING (```c++ 
 (f->_flags & _IO_CURRENTLY_PUTTING)```)
 
+
 2.1 -> we set ``_IO_write_base`` to the address ``file_contents``
+
 
 2.2 -> we set ``_IO_write_ptr`` to ``file_contents + bytes_to_put``.
 
@@ -239,6 +245,9 @@ unsigned __int64 sub_4012ED()
   return *(_QWORD *)&size[1] - __readfsqword(0x28u);
 }
 ```
+
+
+
 
 ```python
 from pwn import *
@@ -471,6 +480,10 @@ int main() {
   }
 }
 ```
+
+
+
+
 
 ```python
 from pwn import *
